@@ -26,7 +26,17 @@ import org.apache.tools.ant.types.Commandline
 
 buildscript {
   repositories {
-    mavenCentral()
+    // Maven本地仓库
+    mavenLocal()
+
+    // 阿里云仓库
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    maven { url 'https://maven.aliyun.com/repository/central/' }
+    maven { url 'https://maven.aliyun.com/repository/google/' }
+    maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
+
+    // 如果需要，保留默认的 Maven Central仓库
+    //mavenCentral()
   }
 
   dependencies {

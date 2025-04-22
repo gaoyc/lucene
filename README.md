@@ -43,6 +43,10 @@ comprehensive documentation, visit:
   1. Clone Lucene's git repository (or download the source distribution).
   2. Run gradle launcher script (`gradlew`).
 
+  备注: 编译环境
+  1. JDK-11.0.8
+  2. gradle-8.10-all
+
 ### Step 0) Set up your development environment (OpenJDK 11 or greater)
 
 We'll assume that you know how to get and set up the JDK - if you
@@ -78,6 +82,16 @@ If you want to build Lucene, type:
 
 ```
 ./gradlew assemble
+```
+
+备注: 使用系统配置环境变量进行如下编译
+
+```shell
+## build
+gradle -Pvalidation.git.failOnModified=false build   --info  -x test
+
+## assemble
+gradle -Pvalidation.git.failOnModified=false    assemble  -x test
 ```
 
 NOTE: DO NOT use the `gradle` command that is perhaps installed on your machine. This may

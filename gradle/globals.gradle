@@ -22,7 +22,18 @@ allprojects {
 
   // Repositories to fetch dependencies from.
   repositories {
-    mavenCentral()
+
+    // 如果需要，保留默认的 Maven Central 和 Google 仓库
+    mavenLocal()
+
+    // 阿里云仓库
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    maven { url 'https://maven.aliyun.com/repository/central/' }
+    maven { url 'https://maven.aliyun.com/repository/google/' }
+    maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
+
+    //原始maven中心仓库
+    //mavenCentral()
   }
 
   // Artifacts will have names after full gradle project path
